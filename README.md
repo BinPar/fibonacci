@@ -1,7 +1,7 @@
-# Nombre del proyecto
+# Sucesión de Fibonacci
 
-> **Note:** All the source typescript files (like components, logic, hooks, etc.) with the sole
-> exception of **pages** and **tests** needs to be included under the **src** folder
+Cálculo de la sucesión de Fibonacci.
 
-Right after clone the repository execute inside: `npm run useNodeLTS`.
+Artículo de la Wikipedia: https://es.wikipedia.org/wiki/Sucesi%C3%B3n_de_Fibonacci
 
+Vídeo explicativo: https://www.youtube.com/watch?v=PYk5lZEIlEk
