@@ -4,26 +4,22 @@
  * @returns 
  */
 
-const listMemo: number[] = [];
+// const listMemo: number[] = [];
+const listMemo = new Map<number,number>();
 
-const fibonacci = (n: number): number => {
-    if (n < 2) {
-        return n;
+function fibIterative(n: number): number {
+    if (listMemo.has(n)) {
+        return listMemo.get(n)!;
     }
-    if (listMemo[n] === undefined) {
-        listMemo[n] = fibonacci(n - 2) + fibonacci(n - 1);
+    for(let i = listMemo.size; i <= n; i+= 1) {
+        if (i < 2) {
+            listMemo.set(i, i);
+        } else {
+            listMemo.set(i, listMemo.get(i-1)! + listMemo.get(i-2)!);
+        }
     }
-    return listMemo[n];
-};
+    return listMemo.get(n)!;
+}
 
-// fibonacci(5)
-// >> fibonacci(4)
-//  >> fibonacci(3)
-//  >> fibonacci(2)
-//    >> fibonacci(1)
-//    >> fibonacci(0)
-// >> fibonacci(3)
-//  >> fibonacci(2)
-//  >> fibonacci(1)
 
-export default fibonacci;
+export default fibIterative;
