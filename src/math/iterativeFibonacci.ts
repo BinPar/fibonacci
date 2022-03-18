@@ -3,14 +3,18 @@
  * @param n 
  * @returns 
  */
+
+const listMemo: number[] = [];
+
 const fibonacci = (n: number): number => {
     if (n < 2) {
         return n;
     }
-    return fibonacci(n - 2) + fibonacci(n - 1);
+    if (listMemo[n] === undefined) {
+        listMemo[n] = fibonacci(n - 2) + fibonacci(n - 1);
+    }
+    return listMemo[n];
 };
-
-// EXECUTION TIME FOR 45: 18.782ms
 
 // fibonacci(5)
 // >> fibonacci(4)
